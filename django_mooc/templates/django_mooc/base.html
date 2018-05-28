@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block meta_title %}{% endblock %} | Cowhite Software</title>
+
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}django_mooc/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+  {% block css %}{% endblock %}
+</head>
+<body>
+  {% include "django_mooc/includes/navbar.html" %}
+  <div class='container'>
+    {% block content %}{% endblock %}
+  </div>
+  <footer class='footer'>
+    <p>© {% now 'Y' %} CoWhite Software Pvt. Ltd</p>
+  </footer>
+
+  <script type="text/javascript" src="{{ STATIC_URL }}django_mooc/lib/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}django_mooc/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}django_mooc/lib/cowhite.js"></script>
+
+  {% block js %}{% endblock %}
+
+</body>
+</html>
