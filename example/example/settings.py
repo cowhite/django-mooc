@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # 3rd party apps
     'django_mooc',
+    'django_mooc.courses',
+    'django_mooc.components',
+    'django_mooc.assignments',
 ]
 
 MIDDLEWARE = [
