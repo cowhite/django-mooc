@@ -150,6 +150,9 @@ var submitForm = function($this){
 
         if($this.hasClass("btn-submit-form")){
           $(modal).modal('hide');
+
+          $(document).trigger($showFormBtn.data("name")+"-submitted", res);
+
           eval(afterSuccess)();
         }
         else{

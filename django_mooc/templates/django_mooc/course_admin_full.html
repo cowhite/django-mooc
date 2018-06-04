@@ -1,12 +1,12 @@
 {% extends 'django_mooc/base.html' %}
 
 {% block content %}
-	<div class="row">
-		<div class="col-md-4 pull-left">
-			<h1>Course admin Home</h1>
-		</div>
-		<div class="col-md-8 pull-right">
-			<a href="#" class="btn btn-primary">Add new course</a>
-		</div>
-	</div>
+
+{% include "django_mooc/courses/sections/edit/edit_course.html" %}
+
+{% endblock %}
+
+{% block js %}
+  <script type="text/javascript" src="{{ STATIC_URL }}django_mooc/js/course_admin.js"></script>
+
 {% endblock %}

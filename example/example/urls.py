@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-
 from django_mooc.views import sample
 import django_mooc.staff_urls as staff_urls
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('allauth.urls')),
     url(r'^$', sample),
     # url(r'^$', include('django_mooc.normal_user_urls.py')),
-    url(r'^course_admin/', include(staff_urls)),
+    url(r'^course_admin/', include(staff_urls, namespace="django-mooc-staff")),
 ]

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 from django_mooc.utils.models import DateTimeBase, Slugged
 
@@ -6,6 +7,8 @@ from django_mooc.utils.models import DateTimeBase, Slugged
 
 class Course(DateTimeBase, Slugged):
     organization = models.CharField(max_length= 255)
+    created_by = models.ForeignKey(User)
+
 
 class Section(DateTimeBase, Slugged):
     course = models.ForeignKey(Course)
